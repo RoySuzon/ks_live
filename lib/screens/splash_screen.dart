@@ -1,6 +1,8 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ks_live/controller/login_screen.dart';
+import 'package:ks_live/screens/Me/details_profile/user_details_screen.dart';
 import 'package:ks_live/screens/index_screen.dart';
 import 'package:ks_live/screens/sign_in_screen.dart';
 import 'package:ks_live/utils/constants.dart';
@@ -20,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
     WidgetsFlutterBinding.ensureInitialized();
 
     Future.delayed(const Duration(seconds: 2), () {
-      Get.offAll(const Index_Screen(),
+      Get.offAll(LoginScreen(),
           transition: Transition.fade, duration: Duration(seconds: 2));
     });
   }
@@ -36,7 +38,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Center(
                 child: ZoomIn(
-              duration: const Duration(seconds: 2),
+              duration: const Duration(seconds: 1),
               child: Image.asset("assets/images/logo.png",
                   width: screenWidth / 1.4),
             )),

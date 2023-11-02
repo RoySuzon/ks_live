@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ks_live/screens/Home/follow_screen.dart';
-import 'package:ks_live/screens/Home/trend_screen.dart';
 import 'package:ks_live/screens/Social/make_friend_screen.dart';
 import 'package:ks_live/screens/Social/moment_screen.dart';
 import 'package:ks_live/utils/constants.dart';

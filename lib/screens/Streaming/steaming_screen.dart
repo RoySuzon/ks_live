@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ks_live/utils/constants.dart';
-import 'package:ks_live/widgets/BigText.dart';
-
+/* 
 class StreamingScreen extends StatefulWidget {
   const StreamingScreen({super.key});
 
@@ -20,9 +18,6 @@ class _StreamingScreenState extends State<StreamingScreen> {
               image: NetworkImage(
                   'https://images.pexels.com/photos/1004642/pexels-photo-1004642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'))),
       child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-        ),
         backgroundColor: Colors.transparent,
         body: Column(
           children: [
@@ -96,16 +91,18 @@ class _StreamingScreenState extends State<StreamingScreen> {
                                         padding: const EdgeInsets.all(8.0),
                                         child: Row(
                                           children: [
-                                            Icon(
-                                              Icons.person,
-                                              color: whiteColor,
+                                            Image.asset(
+                                              kPerson,
+                                              color: Colors.white,
+                                              height: screenWidth / 20,
                                             ),
                                             SizedBox(width: 4),
                                             InkWell(
                                               onTap: () => Get.back(),
-                                              child: Icon(
-                                                Icons.close,
-                                                color: whiteColor,
+                                              child: Image.asset(
+                                                kPerson,
+                                                color: Colors.white,
+                                                height: screenWidth / 20,
                                               ),
                                             ),
                                           ],
@@ -147,18 +144,22 @@ class _StreamingScreenState extends State<StreamingScreen> {
               ],
             ),
             Spacer(),
-            CustomeBottomSheet(),
+            CustomeBottomSheet(
+              img: manImage,
+            ),
           ],
         ),
       ),
     );
   }
-}
+} */
 
 class CustomeBottomSheet extends StatelessWidget {
-  const CustomeBottomSheet({
+  CustomeBottomSheet({
     super.key,
+    required this.img,
   });
+  final String img;
 
   @override
   Widget build(BuildContext context) {
@@ -175,16 +176,17 @@ class CustomeBottomSheet extends StatelessWidget {
                 Expanded(
                   child: Row(
                     children: [
-                      CircleAvatar(
-                        child: Icon(Icons.message),
+                      SizedBox(width: 30),
+                      Image.asset(
+                        kMessages,
+                        color: Colors.white,
+                        height: screenWidth / 15,
                       ),
                       SizedBox(width: 30),
-                      CircleAvatar(
-                        backgroundColor: Colors.transparent,
-                        child: Icon(
-                          Icons.message,
-                          color: whiteColor,
-                        ),
+                      Image.asset(
+                        kPerson,
+                        color: Colors.white,
+                        height: screenWidth / 15,
                       ),
                     ],
                   ),
@@ -204,6 +206,7 @@ class CustomeBottomSheet extends StatelessWidget {
                                   (index) => Padding(
                                         padding: const EdgeInsets.only(left: 8),
                                         child: CircleAvatar(
+                                          backgroundImage: AssetImage(img),
                                           radius: 25,
                                         ),
                                       )),

@@ -79,8 +79,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
                         Container(
                           width: 60,
                           child: Image.asset(
-                            'assets/images/female.png',
-                            color: Colors.white,
+                            kProtection,
+                            fit: BoxFit.cover,
+                            // color: Colors.white,
                           ),
                         ),
                         Align(
@@ -89,11 +90,17 @@ class _MessagesScreenState extends State<MessagesScreen> {
                             padding: const EdgeInsets.only(top: 8, right: 8),
                             child: SizedBox(
                               width: 30,
-                              child: CircleAvatar(
-                                backgroundColor: Colors.white30,
-                                child: Icon(
-                                  Icons.close,
-                                  color: whiteColor,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.white30),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(
+                                    kClose,
+                                    height: screenWidth / 20,
+                                    color: whiteColor,
+                                  ),
                                 ),
                               ),
                             ),

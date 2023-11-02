@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ks_live/screens/Me/about_me_screen.dart';
+import 'package:get/get.dart';
+import 'package:ks_live/controller/login_screen.dart';
+import 'package:ks_live/screens/Me/user_screen.dart';
 import 'package:ks_live/utils/constants.dart';
 
 class MeScreen extends StatefulWidget {
@@ -18,31 +20,44 @@ class _MeScreenState extends State<MeScreen> {
               backgroundColor: Colors.white,
               elevation: 12,
               actions: [
-                SizedBox(
-                  width: screenWidth / 1.4,
-                ),
-                Expanded(
+                GestureDetector(
+                  onTap: () {
+                    Get.offAll(LoginScreen());
+                  },
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.qr_code,
-                              size: screenWidth / 15,
-                            )),
-                        GestureDetector(
-                            onTap: () {},
-                            child: Icon(
-                              Icons.settings,
-                              size: screenWidth / 15,
-                            )),
-                      ],
+                    padding: const EdgeInsets.all(8),
+                    child: Image.asset(
+                      kScanner,
+                      height: screenWidth / 18,
+                      width: screenWidth / 18,
                     ),
                   ),
-                )
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAll(LoginScreen());
+                  },
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Image.asset(
+                          kSetting,
+                          height: screenWidth / 15,
+                        ),
+                      ),
+                      Positioned(
+                          top: 0,
+                          right: 0,
+                          width: 10,
+                          height: 10,
+                          child: Image.asset(
+                            kCircle,
+                            color: Colors.red,
+                          ))
+                    ],
+                  ),
+                ),
               ],
             ),
             // actions: [

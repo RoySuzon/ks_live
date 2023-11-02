@@ -43,16 +43,16 @@ class AboutListtileWidget extends StatelessWidget {
           )),
           Row(
             children: [
-              Icon(
-                Icons.circle,
-                size: 12,
+              Image.asset(
+                kCircle,
+                height: screenWidth / 40,
                 color: redColor,
               ),
               SizedBox(width: 5),
-              Icon(
-                Icons.arrow_forward_ios,
+              Image.asset(
+                kForward,
                 color: Colors.grey,
-                size: 18,
+                height: screenWidth / 18,
               ),
             ],
           )

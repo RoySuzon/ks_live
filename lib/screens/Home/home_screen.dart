@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ks_live/screens/Home/follow_screen.dart';
 import 'package:ks_live/screens/Home/geust_call_screen.dart';
@@ -18,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: DefaultTabController(
-      length: 4,
+      length: 3,
       child: Scaffold(
         appBar: AppBar(
           elevation: 0.0,
@@ -67,10 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             text: "Explore",
                             // child: BigText(text: "Explore", letterSpacing: 0.0, fontWeight: FontWeight.w600,),
                           ), */
-                          Tab(
-                            text: "PK",
-                            // child: BigText(text: "PK", letterSpacing: 0.0, fontWeight: FontWeight.w600,),
-                          ),
+
                           Tab(
                             text: "Guest Call",
                             // child: BigText(text: "Guest Call", letterSpacing: 0.0, fontWeight: FontWeight.w600,),
@@ -108,7 +104,6 @@ class _HomeScreenState extends State<HomeScreen> {
             FollowScreen(),
             TrendScreen(),
             // Icon(Icons.directions_car, size: 350),
-            Icon(Icons.directions_car, size: 350),
             GeustCallScreen(),
           ],
         ),

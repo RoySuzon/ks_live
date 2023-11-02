@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ks_live/utils/constants.dart';
-import 'package:ks_live/widgets/trend_card_widget.dart';
 
 import '../../widgets/BigText.dart';
 
@@ -105,7 +104,7 @@ class _NewScreenState extends State<NewScreen> {
                                                     color: Colors.red.shade100),
                                                 child: Padding(
                                                   padding: const EdgeInsets
-                                                          .symmetric(
+                                                      .symmetric(
                                                       horizontal: 5,
                                                       vertical: 3),
                                                   child: Row(
@@ -150,10 +149,10 @@ class _NewScreenState extends State<NewScreen> {
                                                 fontWeight: FontWeight.w500,
                                               ),
                                               // SizedBox(width: 5),
-                                              Icon(
-                                                Icons.favorite_border,
+                                              Image.asset(
+                                                kLove,
                                                 color: Colors.grey,
-                                                size: 40,
+                                                height: 40,
                                               ),
                                             ],
                                           )

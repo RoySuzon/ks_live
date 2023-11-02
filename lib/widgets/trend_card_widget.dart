@@ -1,14 +1,18 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ks_live/controller/streaming_controller.dart';
+import 'package:ks_live/screens/Streaming/agora_streaming_screen.dart';
 import 'package:ks_live/screens/Streaming/steaming_screen.dart';
 
 import '../utils/constants.dart';
 import 'BigText.dart';
 
 class TrendCardWidget extends StatefulWidget {
-  const TrendCardWidget({Key? key, this.geustCall = false}) : super(key: key);
+  const TrendCardWidget({Key? key, this.geustCall = false, this.onTap})
+      : super(key: key);
   final bool geustCall;
+  final VoidCallback? onTap;
   @override
   State<TrendCardWidget> createState() => _TrendCardWidgetState();
 }
@@ -17,10 +21,7 @@ class _TrendCardWidgetState extends State<TrendCardWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Get.to(StreamingScreen(),
-            transition: Transition.fade, duration: Duration(milliseconds: 500));
-      },
+      onTap: widget.onTap,
       child: Stack(
         children: [
           // Image

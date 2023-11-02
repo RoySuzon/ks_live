@@ -30,7 +30,7 @@ class _index_screenState extends State<Index_Screen> {
     // TODO: implement initState
     super.initState();
 
-    selected = 3;
+    selected = 0;
     controller = PageController(initialPage: selected);
   }
 
@@ -69,7 +69,7 @@ class _index_screenState extends State<Index_Screen> {
               selectedColor: blackColor,
               icon: ImageIcon(
                 AssetImage(
-                  "assets/images/user.png",
+                  kHome,
                 ),
                 size: 20,
               ),
@@ -83,7 +83,7 @@ class _index_screenState extends State<Index_Screen> {
               backgroundColor: blackColor,
               selectedIcon: ImageIcon(
                 AssetImage(
-                  "assets/images/user.png",
+                  kHome1,
                 ),
                 size: 30,
                 color: blackColor,
@@ -92,7 +92,7 @@ class _index_screenState extends State<Index_Screen> {
             BottomBarItem(
               icon: ImageIcon(
                 AssetImage(
-                  "assets/images/joystick.png",
+                  kPuzzle,
                 ),
                 size: 20,
               ),
@@ -107,7 +107,7 @@ class _index_screenState extends State<Index_Screen> {
               selectedColor: blackColor,
               selectedIcon: ImageIcon(
                 AssetImage(
-                  "assets/images/joystick.png",
+                  kPuzzle1,
                 ),
                 size: 30,
                 color: blackColor,
@@ -127,7 +127,7 @@ class _index_screenState extends State<Index_Screen> {
               ),
               backgroundColor: blackColor,
               selectedIcon: ImageIcon(
-                AssetImage("assets/images/megaphone.png"),
+                AssetImage("assets/images/megaphone1.png"),
                 size: 30,
                 color: blackColor,
               ),
@@ -146,7 +146,7 @@ class _index_screenState extends State<Index_Screen> {
               ),
               backgroundColor: blackColor,
               selectedIcon: ImageIcon(
-                AssetImage("assets/images/user.png"),
+                AssetImage("assets/images/user1.png"),
                 size: 30,
                 color: blackColor,
               ),
