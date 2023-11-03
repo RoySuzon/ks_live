@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "639517397184",
+    "project_id": "kslive-403802",
+    "storage_bucket": "kslive-403802.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639517397184:android:02f4ab14a3c98b21295d25",
+        "android_client_info": {
+          "package_name": "com.example.kslive"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX_c3E1nltX1PHq1ppHTPEJcfKm67zen8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

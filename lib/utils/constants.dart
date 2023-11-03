@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 const logoPath = 'assets/images/logo.png';
 const logoPathJpg = 'assets/images/logo.jpg';
@@ -42,7 +44,7 @@ const String kCustomerCare = 'assets/images/help-desk.png';
 const String kMoneyBag = 'assets/images/money-bag.png';
 const String kWarning = 'assets/images/engine-warning.png';
 const String kFacebook = 'assets/images/facebook.png';
-const String kGoogle = 'assets/images/google(1).png';
+const String kGoogle = 'assets/images/google2.png';
 const String kForward = 'assets/images/angle-small-right.png';
 const String kProtection = 'assets/images/shield.png';
 const String kLove = 'assets/images/heart.png';
@@ -52,3 +54,13 @@ const String kMessages = 'assets/images/messages.png';
 const String kCircle = 'assets/images/circle.png';
 const String kPuzzle = 'assets/images/puzzle-alt.png';
 const String kPuzzle1 = 'assets/images/puzzle-alt1.png';
+
+final String userUrl = FirebaseAuth.instance.currentUser!.photoURL.toString();
+final String userEmail = FirebaseAuth.instance.currentUser!.email.toString();
+final String useName =
+    FirebaseAuth.instance.currentUser!.displayName.toString();
+
+const String kAppId = "67320f1089d14d3ab4cfcab47870f764";
+const String kChannelName = "KsLive";
+const String kToken =
+    "007eJxTYNBavig7a/qnyyrCy+W7PC/3X06/xeuY6yP8q7BT7PjxhEsKDAZmppamFoYmlsmWSSZGKQZJRoYpBpapycYpJsZGRsZpi7tdUhsCGRk+5xqzMDJAIIjPxuBd7JNZlsrAAAB2AB+l";

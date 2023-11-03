@@ -1,13 +1,10 @@
-import 'dart:async';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:ks_live/screens/index_screen.dart';
+import 'package:ks_live/controller/auth_controller.dart';
+
 import 'package:ks_live/utils/constants.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:ks_live/view/index_screen.dart';
+
 // import 'package:get/route_manager.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,6 +15,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final AuthController authController = AuthController();
   var moreOption = false;
   final controller = PageController();
   @override
@@ -54,15 +52,18 @@ class _LoginScreenState extends State<LoginScreen> {
               // SizedBox(height: Get.height / 30),
               CustomButton(
                 'Sign in With Google',
-                icon: FontAwesomeIcons.google,
+                icon: kGoogle,
                 color: Colors.black,
-                onTap: () async {
+                onTap: () {
                   // await GoogleSignInApi.login();
 
                   // launchUrlString('http://127.0.0.1:8080/auth/google');
-                  launchUrl(Uri.parse('http://localhost:8080/auth/google'))
-                      .then((value) => ));
-Get.to(Index_Screen()
+                  // launchUrl(Uri.parse('http://localhost:8080/auth/google'))
+                  //     .then((value) => Get.to(Index_Screen()));
+                  authController.signInWithGoogle().then((value) {
+                    Get.offAll(Index_Screen());
+                  });
+
                   // Get.offAll(Index_Screen(),
                   //     transition: Transition.native,
                   //     duration: Duration(seconds: 1));
@@ -91,11 +92,11 @@ Get.to(Index_Screen()
                         children: [
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(FontAwesomeIcons.facebook),
+                            icon: Image.asset(kFacebook),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: Icon(FontAwesomeIcons.phone),
+                            icon: Image.asset(kGoogle),
                           ),
                         ],
                       ),
@@ -123,7 +124,7 @@ class CustomButton extends StatelessWidget {
     this.fontColor,
     required this.onTap,
   });
-  final IconData icon;
+  final String icon;
   final Color? color;
   final Color? bgColor;
   final Color? fontColor;
@@ -152,10 +153,7 @@ class CustomButton extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16),
-              child: Icon(
-                icon,
-                color: color,
-              ),
+              child: Image.asset(icon),
             ),
             SizedBox(width: 12),
             Expanded(
@@ -173,6 +171,28 @@ class CustomButton extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileImage extends StatelessWidget {
+  const ProfileImage({super.key, required this.imgLink});
+  final String imgLink;
+
+  @override
+  Widget build(BuildContext context) {
+    final AuthController authController = AuthController();
+    return Scaffold(
+      body: InkWell(
+        onTap: () {
+          authController.signOut();
+        },
+        child: Center(
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(imgLink),
+          ),
         ),
       ),
     );

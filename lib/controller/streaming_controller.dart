@@ -1,14 +1,10 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ks_live/utils/constants.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class StreamingController extends GetxController {
-  static String appId = "67320f1089d14d3ab4cfcab47870f764";
-  String channelName = "KsLive";
-  String token =
-      "007eJxTYGBpNX68++JX9zOnJVovP2U++f7m5gWL3+XO2dHSwPOo9+A7BQZDw9S0FANLk2TLtGQTY7M0SxODpKRU48Qky7TEVOO0lMPHHVMbAhkZNPZqsTIyQCCIz8bgXeyTWZbKwAAAAtck7w==";
-
   RxInt uid = 0.obs;
 
   // uid of the local user
@@ -33,11 +29,11 @@ class StreamingController extends GetxController {
 
   Future<void> setupVideoSDKEngine() async {
     // retrieve or request camera and microphone permissions
-    await [Permission.microphone, Permission.camera].request();
+    await [Permission.camera].request();
 
     //create an instance of the Agora engine
     agoraEngine = createAgoraRtcEngine();
-    await agoraEngine.initialize(RtcEngineContext(appId: appId));
+    await agoraEngine.initialize(RtcEngineContext(appId: kAppId));
     await agoraEngine.enableVideo();
 
     // Register the event handler
@@ -77,8 +73,8 @@ class StreamingController extends GetxController {
     );
 
     await agoraEngine.joinChannel(
-      token: token,
-      channelId: channelName,
+      token: kToken,
+      channelId: kChannelName,
       options: options,
       uid: uid.value,
     );
@@ -89,8 +85,8 @@ class StreamingController extends GetxController {
     _remoteUid.value = 0;
     // update();
     agoraEngine.leaveChannel();
+    agoraEngine.release();
     Get.back();
-    dispose();
   }
 
 // Release the resources when you leave

@@ -1,9 +1,4 @@
-import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:ks_live/controller/streaming_controller.dart';
-import 'package:ks_live/screens/Streaming/agora_streaming_screen.dart';
-import 'package:ks_live/screens/Streaming/steaming_screen.dart';
 
 import '../utils/constants.dart';
 import 'BigText.dart';
@@ -27,8 +22,9 @@ class _TrendCardWidgetState extends State<TrendCardWidget> {
           // Image
           ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                "assets/images/man1.jpeg",
+              child: Image.network(
+                userUrl,
+                width: double.infinity,
                 // width: 155,
                 // height: 150,
                 fit: BoxFit.cover,
