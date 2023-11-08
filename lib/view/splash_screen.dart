@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Center(
                 child: ZoomIn(
-              duration: const Duration(seconds: 1),
+              duration: const Duration(seconds: 2),
               child: Image.asset("assets/images/logo.png",
                   width: screenWidth / 1.4),
             )),

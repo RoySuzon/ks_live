@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -58,5 +55,16 @@ class DefaultFirebaseOptions {
     messagingSenderId: '639517397184',
     projectId: 'kslive-403802',
     storageBucket: 'kslive-403802.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyARND1G5NBB7N5b6ke7k0jONKdu37xOQfs',
+    appId: '1:639517397184:ios:810d21c24a360779295d25',
+    messagingSenderId: '639517397184',
+    projectId: 'kslive-403802',
+    storageBucket: 'kslive-403802.appspot.com',
+    androidClientId: '639517397184-kjqbmkk4gj222sf2abb0n3ovhkiotqu4.apps.googleusercontent.com',
+    iosClientId: '639517397184-agfctg6pad710reicgf30ldfudm2s681.apps.googleusercontent.com',
+    iosBundleId: 'com.example.ksLive',
   );
 }

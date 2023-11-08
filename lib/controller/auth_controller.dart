@@ -25,7 +25,7 @@ class AuthController {
   }
 
   Future signOut() async {
-    return _auth.signOut().then((value) =>
-        _authService.signOut().then((value) => Get.offAll(LoginScreen())));
+    return _auth.signOut().then(
+        (value) => _authService.signOut().then((value) => Get.reloadAll()));
   }
 }

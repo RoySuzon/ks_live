@@ -12,7 +12,6 @@ class ApiClass {
   final String text;
 
   ApiClass({required this.imageLink, required this.text});
-
   static List abcd = [
     ApiClass(imageLink: [
       'assets/images/man1.jpeg',

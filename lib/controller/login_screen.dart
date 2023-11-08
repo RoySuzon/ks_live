@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ks_live/controller/auth_controller.dart';
+import 'package:ks_live/res/routes/routes_name.dart';
 
 import 'package:ks_live/utils/constants.dart';
 import 'package:ks_live/view/index_screen.dart';
@@ -61,7 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // launchUrl(Uri.parse('http://localhost:8080/auth/google'))
                   //     .then((value) => Get.to(Index_Screen()));
                   authController.signInWithGoogle().then((value) {
-                    Get.offAll(Index_Screen());
+                    Get.offAllNamed(RouteName.indexScreen);
                   });
 
                   // Get.offAll(Index_Screen(),
@@ -177,24 +178,24 @@ class CustomButton extends StatelessWidget {
   }
 }
 
-class ProfileImage extends StatelessWidget {
-  const ProfileImage({super.key, required this.imgLink});
-  final String imgLink;
+// class ProfileImage extends StatelessWidget {
+//   const ProfileImage({super.key, required this.imgLink});
+//   final String imgLink;
 
-  @override
-  Widget build(BuildContext context) {
-    final AuthController authController = AuthController();
-    return Scaffold(
-      body: InkWell(
-        onTap: () {
-          authController.signOut();
-        },
-        child: Center(
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(imgLink),
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     final AuthController authController = AuthController();
+//     return Scaffold(
+//       body: InkWell(
+//         onTap: () {
+//           authController.signOut();
+//         },
+//         child: Center(
+//           child: CircleAvatar(
+//             backgroundImage: NetworkImage(imgLink),
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

@@ -34,7 +34,8 @@ class _MakeFriendScreenState extends State<MakeFriendScreen> {
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 0, horizontal: 12),
                 backgroundColor: darkDeepPurple.withOpacity(0.2),
-                unselectedBackgroundColor: Colors.grey[300],
+                unselectedBackgroundColor:
+                    const Color.fromARGB(255, 85, 75, 75),
                 labelStyle: GoogleFonts.montserrat(
                   letterSpacing: 0.0,
                   fontSize: 12,

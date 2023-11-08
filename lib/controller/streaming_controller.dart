@@ -85,7 +85,7 @@ class StreamingController extends GetxController {
     _remoteUid.value = 0;
     // update();
     agoraEngine.leaveChannel();
-    agoraEngine.release();
+    // agoraEngine.release();
     Get.back();
   }
 

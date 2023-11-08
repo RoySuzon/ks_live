@@ -37,7 +37,11 @@ class _MeScreenState extends State<MeScreen> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    authController.signOut();
+                    setState(() {
+                      setState(() {
+                        authController.signOut();
+                      });
+                    });
                   },
                   child: Stack(
                     children: [

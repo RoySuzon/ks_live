@@ -18,14 +18,15 @@ class SplashService {
     //   }
     // });
 
-    FirebaseAuth.instance.authStateChanges().listen((User? user) {
-      if (user == null) {
-        Get.offAll(LoginScreen(),
-            transition: Transition.fade, duration: Duration(seconds: 2));
-      } else {
-        Get.offAll(Index_Screen(),
-            transition: Transition.fade, duration: Duration(seconds: 2));
-      }
-    });
+    Future.delayed(Duration(seconds: 2)).then((value) =>
+        FirebaseAuth.instance.authStateChanges().listen((User? user) {
+          if (user == null) {
+            Get.offAll(LoginScreen(),
+                transition: Transition.native, duration: Duration(seconds: 1));
+          } else {
+            Get.offAll(Index_Screen(),
+                transition: Transition.native, duration: Duration(seconds: 1));
+          }
+        }));
   }
 }

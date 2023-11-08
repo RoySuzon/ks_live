@@ -2,7 +2,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:ks_live/demo/demo.dart';
 import 'package:ks_live/firebase_options.dart';
+import 'package:ks_live/res/routes/routes.dart';
 import 'package:ks_live/view/splash_screen.dart';
 import 'package:ks_live/utils/constants.dart';
 
@@ -11,11 +13,12 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final MyController c = Get.put(MyController());
+  MyApp({super.key});
 
   // This widget is the root of your application.
   @override
@@ -29,7 +32,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
+      // home: SplashScreen(),
+      getPages: AppRoutes.appRoutes(),
     );
   }
 }

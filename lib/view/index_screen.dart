@@ -16,16 +16,13 @@ class Index_Screen extends StatefulWidget {
 }
 
 class _index_screenState extends State<Index_Screen> {
-  var _currentIndex = 0;
   var selected;
   var heart = false;
   PageController controller = PageController();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
     selected = 0;
     controller = PageController(initialPage: selected);
   }
