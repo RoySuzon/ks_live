@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +9,7 @@ import 'package:ks_live/firebase_options.dart';
 import 'package:ks_live/res/routes/routes.dart';
 import 'package:ks_live/utils/constants.dart';
 import 'package:ks_live/view/Auth/auth_screen.dart';
+import 'package:ks_live/view/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,13 +30,18 @@ class MyApp extends StatelessWidget {
         SystemUiOverlayStyle(statusBarColor: darkDeepPurple));
     return GetMaterialApp(
       onDispose: () {},
+      onInit: () {
+        Timer(Duration(seconds: 1), () {
+          Get.offAll(AuthScreen());
+        });
+      },
       debugShowCheckedModeBanner: false,
       title: 'KS LIVE',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AuthScreen(),
+      // home: SplashScreen(),
       getPages: AppRoutes.appRoutes(),
     );
   }
