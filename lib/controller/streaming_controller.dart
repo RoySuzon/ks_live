@@ -42,8 +42,9 @@ class StreamingController extends GetxController {
         onJoinChannelSuccess: (RtcConnection connection, int elapsed) {
           showMessage(
               "Local user uid:${connection.localUid} joined the channel");
-
           _isJoined.value = true;
+          uid.value = connection.localUid!;
+
           // update();
         },
         onUserJoined: (RtcConnection connection, int remoteUid, int elapsed) {
@@ -80,13 +81,14 @@ class StreamingController extends GetxController {
     );
   }
 
-  void leave() {
+  void leave() async {
     _isJoined.value = false;
     _remoteUid.value = 0;
     // update();
-    agoraEngine.leaveChannel();
-    // agoraEngine.release();
+    await agoraEngine.leaveChannel();
+    agoraEngine.release();
     Get.back();
+    dispose();
   }
 
 // Release the resources when you leave
@@ -94,6 +96,5 @@ class StreamingController extends GetxController {
   void dispose() async {
     await agoraEngine.leaveChannel();
     agoraEngine.release();
-    super.dispose();
   }
 }

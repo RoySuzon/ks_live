@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:ks_live/controller/login_screen.dart';
-import 'package:ks_live/view/Me/details_profile/user_details_screen.dart';
 import 'package:ks_live/view/index_screen.dart';
 
 class SplashService {

@@ -16,16 +16,12 @@ class GeustCallScreen extends StatefulWidget {
 }
 
 class _GeustCallScreenState extends State<GeustCallScreen> {
-  final controller = Get.put(StreamingController());
-  @override
-  void initState() {
-    super.initState();
-  }
+  StreamingController controller = Get.put(StreamingController());
 
   @override
   void dispose() {
-    controller.dispose();
     super.dispose();
+    controller.dispose();
   }
 
   @override

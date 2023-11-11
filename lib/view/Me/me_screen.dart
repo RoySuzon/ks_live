@@ -1,9 +1,13 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ks_live/controller/auth_controller.dart';
 import 'package:ks_live/controller/login_screen.dart';
 import 'package:ks_live/view/Me/user_screen.dart';
 import 'package:ks_live/utils/constants.dart';
+import 'package:ks_live/view/sign_in_screen.dart';
 
 class MeScreen extends StatefulWidget {
   const MeScreen({Key? key}) : super(key: key);
@@ -22,24 +26,23 @@ class _MeScreenState extends State<MeScreen> {
               backgroundColor: Colors.white,
               elevation: 12,
               actions: [
-                GestureDetector(
-                  onTap: () {
-                    Get.offAll(LoginScreen());
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: Image.asset(
-                      kScanner,
-                      height: screenWidth / 18,
-                      width: screenWidth / 18,
-                    ),
+                Padding(
+                  padding: const EdgeInsets.all(8),
+                  child: Image.asset(
+                    kScanner,
+                    height: screenWidth / 18,
+                    width: screenWidth / 18,
                   ),
                 ),
                 GestureDetector(
                   onTap: () {
+                    // setState(() {
+                    //   authController.signOut();
+                    // });
                     setState(() {
-                      setState(() {
-                        authController.signOut();
+                      FirebaseAuth.instance.signOut().then((value) {
+                        Get.off(LoginScreen());
+                        GoogleSignIn().signOut();
                       });
                     });
                   },

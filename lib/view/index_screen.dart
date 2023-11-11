@@ -35,6 +35,8 @@ class _index_screenState extends State<Index_Screen> {
 
   @override
   Widget build(BuildContext context) {
+    print(
+        '<=============================Index Screen=============================>');
     return Scaffold(
         extendBody: true,
         body: PageView(

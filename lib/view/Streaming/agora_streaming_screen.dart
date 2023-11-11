@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
@@ -15,7 +17,7 @@ class AgoraVideoCall extends StatefulWidget {
 }
 
 class _AgoraVideoCallState extends State<AgoraVideoCall> {
-  final controller = Get.put(StreamingController());
+  StreamingController controller = Get.find();
 
   // Build UI
   @override
@@ -164,6 +166,7 @@ class _AgoraVideoCallState extends State<AgoraVideoCall> {
                       ),
                     ],
                   ),
+                  Text(controller.uid.value.toString()),
                   Spacer(),
                   CustomeBottomSheet(
                     img: manImage,
@@ -174,6 +177,9 @@ class _AgoraVideoCallState extends State<AgoraVideoCall> {
           )),
     );
   }
+//ya29.a0AfB_byC6o7cNKrRRERKibHxObx-L-_C4luM4mMchNZl4Tj5JT6_4MK5ABlFoQX90xeCvNQFPqTLbcMKxF4sNeOls9lDwJkdoiUyo-8j2aXTj9lrZPw0pqpDqT_UE-8TpwK8hzMPP2hE--hBPtUc_1EsUGzJViqD5l60aCgYKAUESARASFQHGX2MiQV786V5pNkzsZou9de-PHg0170
+
+//ya29.a0AfB_byAS7nKok7h0xVo_8zfPKsuV62syE2cE4ItIKtooufxhs2iD3yjfm5tqH_cqaIfe3ceUvkOQWjrgnBmUeChFKvEKUsEqiRrCdxfAgbwb9AjxX4HhZdFx0qiSLWh_luVdW7LwiNLn_vH9ArVs6ZQSwPqJutJ7IKQaCgYKAWQSARISFQHGX2MiZtgKncIyXYC3kPrQQQ0OQA0170
 
 // Display local video preview
   Widget _localPreview() {

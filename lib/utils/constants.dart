@@ -63,4 +63,4 @@ final String useName =
 const String kAppId = "67320f1089d14d3ab4cfcab47870f764";
 const String kChannelName = "KsLive";
 const String kToken =
-    "007eJxTYNBavig7a/qnyyrCy+W7PC/3X06/xeuY6yP8q7BT7PjxhEsKDAZmppamFoYmlsmWSSZGKQZJRoYpBpapycYpJsZGRsZpi7tdUhsCGRk+5xqzMDJAIIjPxuBd7JNZlsrAAAB2AB+l";
+    "007eJxTYIj1TuY6ICchYLn1zaebd/UXGYZ0hOltn8tr9DWUITt6v4UCg4GZqaWphaGJZbJlkolRikGSkWGKgWVqsnGKibGRkXGa4xLf1IZARgb9CTdYGRkgEMRnY/Au9sksS2VgAACznR01";

@@ -2,27 +2,17 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ks_live/controller/login_screen.dart';
+import 'package:ks_live/view/Auth/auth_screen.dart';
 import 'package:ks_live/view/Me/details_profile/user_details_screen.dart';
 import 'package:ks_live/view/index_screen.dart';
 import 'package:ks_live/view/sign_in_screen.dart';
 import 'package:ks_live/utils/constants.dart';
 import 'package:ks_live/view_model/splash_service.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    final SplashService splashService = SplashService();
-    super.initState();
-    splashService.isLogin();
-  }
-
+  // @override
   @override
   Widget build(BuildContext context) {
     return Scaffold(

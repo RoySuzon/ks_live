@@ -1,7 +1,9 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ks_live/controller/streaming_controller.dart';
 
 import '../../utils/constants.dart';
 import '../../widgets/BigText.dart';

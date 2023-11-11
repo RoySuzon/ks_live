@@ -1,10 +1,8 @@
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ks_live/view/Home/follow_screen.dart';
 import 'package:ks_live/view/Social/new_screen.dart';
 import 'package:ks_live/view/Social/online_scren.dart';
-import 'package:ks_live/view/Social/popular_screen.dart';
 import '../../utils/constants.dart';
 
 class MakeFriendScreen extends StatefulWidget {

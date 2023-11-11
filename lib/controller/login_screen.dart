@@ -17,6 +17,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final AuthController authController = AuthController();
+
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  // }
+
   var moreOption = false;
   final controller = PageController();
   @override
@@ -62,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // launchUrl(Uri.parse('http://localhost:8080/auth/google'))
                   //     .then((value) => Get.to(Index_Screen()));
                   authController.signInWithGoogle().then((value) {
-                    Get.offAllNamed(RouteName.indexScreen);
+                    Get.offNamed(RouteName.indexScreen);
                   });
 
                   // Get.offAll(Index_Screen(),

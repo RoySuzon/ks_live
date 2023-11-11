@@ -5,8 +5,8 @@ import 'package:get/get.dart';
 import 'package:ks_live/demo/demo.dart';
 import 'package:ks_live/firebase_options.dart';
 import 'package:ks_live/res/routes/routes.dart';
-import 'package:ks_live/view/splash_screen.dart';
 import 'package:ks_live/utils/constants.dart';
+import 'package:ks_live/view/Auth/auth_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,13 +26,14 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: darkDeepPurple));
     return GetMaterialApp(
+      onDispose: () {},
       debugShowCheckedModeBanner: false,
       title: 'KS LIVE',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: SplashScreen(),
+      home: AuthScreen(),
       getPages: AppRoutes.appRoutes(),
     );
   }
