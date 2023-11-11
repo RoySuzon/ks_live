@@ -88,5 +88,3 @@ class GoogleDataPass {
     }
   }
 }
-
-//GOutom ROy
