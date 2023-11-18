@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ks_live/view/Me/details_profile/user_details_screen.dart';
 import 'package:ks_live/utils/constants.dart';
 
@@ -31,7 +32,10 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                 ),
                 InkWell(
                     onTap: () => Get.to(UserDetailsScreen()),
-                    child: AboutListtileWidget()),
+                    child: AboutListtileWidget(
+                      ksId: userUid,
+                      avater: userUrl,
+                    )),
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 16),
                   height: screenHeight / 12,
@@ -144,6 +148,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                       shrinkWrap: true,
                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 3,
+                          // childAspectRatio: .8,
                           crossAxisSpacing: 5,
                           mainAxisSpacing: 5),
                       itemBuilder: (context, index) => ClipRRect(
@@ -154,30 +159,35 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                           child: Container(
                             // color: blackColor,
                             child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Expanded(
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(top: 14),
-                                    child: Transform.rotate(
-                                      angle: pi / 6,
-                                      child: Image(
-                                        image: AssetImage(kBagPack),
-                                        // height: 50,
-                                        width: 50,
-                                        // height: screenHeight / 2,
-                                        // width: screenWidth / 2.2,
-                                        // height: screenWidth / 2.2,
-                                        // height: screenWidth / 2.2,
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                                    ),
+                                Transform.rotate(
+                                  angle: pi / 18,
+                                  child: Image(
+                                    image: AssetImage(profileList[index].image),
+                                    // height: 50,
+                                    width: 40,
+                                    height: 40,
+                                    // height: screenHeight / 2,
+                                    // width: screenWidth / 2.2,
+                                    // height: screenWidth / 2.2,
+                                    // height: screenWidth / 2.2,
+                                    fit: BoxFit.fitWidth,
                                   ),
                                 ),
+                                // SizedBox(height: 12),
                                 Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(
-                                    'User Level',
-                                    style: TextStyle(color: Colors.black),
+                                    textAlign: TextAlign.center,
+                                    profileList[index].name,
+                                    style: GoogleFonts.roboto(
+                                        letterSpacing: 0.0,
+                                        wordSpacing: -1,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black45),
                                   ),
                                 ),
                               ],
@@ -185,7 +195,7 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
                           ),
                         ),
                       ),
-                      itemCount: 9,
+                      itemCount: profileList.length,
                     )
                   ],
                 )
@@ -197,3 +207,24 @@ class _AboutMeScreenState extends State<AboutMeScreen> {
     );
   }
 }
+
+class Profile {
+  final String name, image;
+  Profile(this.name, this.image);
+}
+
+List<Profile> profileList = [
+  Profile('User Lavel', 'assets/profile/userlevel.png'),
+  Profile('VIP Center', 'assets/profile/vip_center-removebg-preview.png'),
+  Profile('Backpack', 'assets/profile/backpack.png'),
+  Profile('Game Center', 'assets/profile/games-removebg-preview.png'),
+  Profile('Gift Center', 'assets/profile/gift_center-removebg-preview.png'),
+  Profile(
+      'Aristocracy Center', 'assets/profile/aristrocracy-removebg-preview.png'),
+  Profile('Mall', 'assets/profile/mall1-removebg-preview.png'),
+  Profile('Point Center', 'assets/profile/point_center-removebg-preview.png'),
+  Profile('Broadcasts Watched',
+      'assets/profile/broadcast_watched-removebg-preview.png'),
+  Profile(
+      'Online Customer ', 'assets/profile/online_customer-removebg-preview.png')
+];

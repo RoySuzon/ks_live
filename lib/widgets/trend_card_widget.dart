@@ -3,20 +3,17 @@ import 'package:flutter/material.dart';
 import '../utils/constants.dart';
 import 'BigText.dart';
 
-class TrendCardWidget extends StatefulWidget {
-  const TrendCardWidget({Key? key, this.geustCall = false, this.onTap})
+class TrendCardWidget extends StatelessWidget {
+  const TrendCardWidget(
+      {Key? key, this.geustCall = false, this.onTap, required this.userUrl})
       : super(key: key);
   final bool geustCall;
   final VoidCallback? onTap;
-  @override
-  State<TrendCardWidget> createState() => _TrendCardWidgetState();
-}
-
-class _TrendCardWidgetState extends State<TrendCardWidget> {
+  final String userUrl;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: widget.onTap,
+      onTap: onTap,
       child: Stack(
         children: [
           // Image
@@ -24,6 +21,7 @@ class _TrendCardWidgetState extends State<TrendCardWidget> {
               borderRadius: BorderRadius.circular(10),
               child: Image.network(
                 userUrl,
+                height: double.infinity,
                 width: double.infinity,
                 // width: 155,
                 // height: 150,
@@ -59,7 +57,7 @@ class _TrendCardWidgetState extends State<TrendCardWidget> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  widget.geustCall
+                  geustCall
                       ? Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(100),

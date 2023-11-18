@@ -17,7 +17,15 @@ class AgoraVideoCall extends StatefulWidget {
 }
 
 class _AgoraVideoCallState extends State<AgoraVideoCall> {
-  StreamingController controller = Get.find();
+  StreamingController controller = Get.put(StreamingController());
+  @override
+  void initState() {
+    controller.setupVideoSDKEngine().then((value) {
+      controller.join();
+    });
+
+    super.initState();
+  }
 
   // Build UI
   @override

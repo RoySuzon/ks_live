@@ -160,7 +160,6 @@ class CustomeBottomSheet extends StatelessWidget {
     required this.img,
   });
   final String img;
-
   @override
   Widget build(BuildContext context) {
     return Container(

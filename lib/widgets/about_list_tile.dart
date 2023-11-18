@@ -4,7 +4,9 @@ import '../utils/constants.dart';
 import 'BigText.dart';
 
 class AboutListtileWidget extends StatelessWidget {
-  const AboutListtileWidget({super.key});
+  const AboutListtileWidget(
+      {super.key, required this.ksId, required this.avater});
+  final String ksId, avater;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class AboutListtileWidget extends StatelessWidget {
               ),
               SizedBox(height: 8),
               BigText(
-                text: 'Mico ID: 1102282829',
+                text: 'KS ID: $ksId',
                 size: 12,
                 fontWeight: FontWeight.w600,
               ),

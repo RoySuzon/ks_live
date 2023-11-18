@@ -23,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     final _auth = FirebaseAuth.instance.currentUser;
-    print((_auth!.toString()).toString());
+    // print((_auth!.toString()).toString());
     return Scaffold(
       body: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),

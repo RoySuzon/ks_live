@@ -138,7 +138,10 @@ class _TrendScreenState extends State<TrendScreen> {
                         crossAxisCount: 2,
                         crossAxisSpacing: 8,
                         mainAxisSpacing: 8),
-                    itemBuilder: (context, index) => TrendCardWidget(),
+                    itemBuilder: (context, index) => TrendCardWidget(
+                      userUrl:
+                          'https://t4.ftcdn.net/jpg/02/14/74/61/360_F_214746128_31JkeaP6rU0NzzzdFC4khGkmqc8noe6h.jpg',
+                    ),
                     itemCount: 10,
                   ),
                 ],

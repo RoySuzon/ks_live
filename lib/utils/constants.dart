@@ -56,6 +56,7 @@ const String kPuzzle = 'assets/images/puzzle-alt.png';
 const String kPuzzle1 = 'assets/images/puzzle-alt1.png';
 
 final String userUrl = FirebaseAuth.instance.currentUser!.photoURL.toString();
+final String userUid = FirebaseAuth.instance.currentUser!.uid.toString();
 final String userEmail = FirebaseAuth.instance.currentUser!.email.toString();
 final String useName =
     FirebaseAuth.instance.currentUser!.displayName.toString();
@@ -63,4 +64,4 @@ final String useName =
 const String kAppId = "67320f1089d14d3ab4cfcab47870f764";
 const String kChannelName = "KsLive";
 const String kToken =
-    "007eJxTYIj1TuY6ICchYLn1zaebd/UXGYZ0hOltn8tr9DWUITt6v4UCg4GZqaWphaGJZbJlkolRikGSkWGKgWVqsnGKibGRkXGa4xLf1IZARgb9CTdYGRkgEMRnY/Au9sksS2VgAACznR01";
+    "007eJxTYLh2NDr/gE5refyFLVXWtrpLecsf+bmG/dE5Pr8n+VjKgzUKDAZmppamFoYmlsmWSSZGKQZJRoYpBpapycYpJsZGRsZpYrURqQ2BjAwW9iXMjAwQCOKzMXgX+2SWpTIwAACIbx8d";

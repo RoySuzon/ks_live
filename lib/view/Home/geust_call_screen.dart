@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:ks_live/controller/streaming_controller.dart';
+import 'package:ks_live/utils/constants.dart';
 import 'package:ks_live/view/Streaming/agora_streaming_screen.dart';
 import 'package:ks_live/widgets/trend_card_widget.dart';
 
@@ -16,13 +17,13 @@ class GeustCallScreen extends StatefulWidget {
 }
 
 class _GeustCallScreenState extends State<GeustCallScreen> {
-  StreamingController controller = Get.put(StreamingController());
+  // StreamingController controller = Get.find();
 
-  @override
-  void dispose() {
-    super.dispose();
-    controller.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  //   controller.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -49,13 +50,11 @@ class _GeustCallScreenState extends State<GeustCallScreen> {
                       itemBuilder: (context, index) => TrendCardWidget(
                         geustCall: true,
                         onTap: () {
-                          controller
-                              .setupVideoSDKEngine()
-                              .then((value) => controller.join())
-                              .then((value) => Get.to(AgoraVideoCall(),
-                                  transition: Transition.fade,
-                                  duration: Duration(milliseconds: 500)));
+                          Get.to(AgoraVideoCall(),
+                              transition: Transition.fade,
+                              duration: Duration(milliseconds: 500));
                         },
+                        userUrl: userUrl,
                       ),
                       itemCount: 10,
                     ),

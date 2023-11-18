@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:ks_live/view/recomended_screen.dart';
 import 'package:ks_live/utils/constants.dart';
 import 'package:ks_live/widgets/BigText.dart';
-import 'package:ks_live/widgets/ButtonWithIcon.dart';
 // import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class SigninScreen extends StatefulWidget {
