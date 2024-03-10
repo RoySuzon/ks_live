@@ -3,9 +3,8 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
+
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:http/http.dart';
 
 class AuthController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
